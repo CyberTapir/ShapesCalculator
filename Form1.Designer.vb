@@ -36,9 +36,17 @@ Partial Class Form1
         Me.grpShapeSelection = New System.Windows.Forms.GroupBox()
         Me.grpRectangle = New System.Windows.Forms.GroupBox()
         Me.grpCircle = New System.Windows.Forms.GroupBox()
+        Me.grpTrapezium = New System.Windows.Forms.GroupBox()
+        Me.lblTpzSide2 = New System.Windows.Forms.Label()
+        Me.lblTpzSide1 = New System.Windows.Forms.Label()
+        Me.lblTpzHeight = New System.Windows.Forms.Label()
+        Me.txtTpzSide2 = New System.Windows.Forms.TextBox()
+        Me.txtTpzSide1 = New System.Windows.Forms.TextBox()
+        Me.txtTpzHeight = New System.Windows.Forms.TextBox()
         Me.grpShapeSelection.SuspendLayout()
         Me.grpRectangle.SuspendLayout()
         Me.grpCircle.SuspendLayout()
+        Me.grpTrapezium.SuspendLayout()
         Me.SuspendLayout()
         '
         'txtRectLength
@@ -77,14 +85,14 @@ Partial Class Form1
         '
         Me.lstOutput.FormattingEnabled = True
         Me.lstOutput.ItemHeight = 15
-        Me.lstOutput.Location = New System.Drawing.Point(331, 29)
+        Me.lstOutput.Location = New System.Drawing.Point(326, 51)
         Me.lstOutput.Name = "lstOutput"
         Me.lstOutput.Size = New System.Drawing.Size(208, 364)
         Me.lstOutput.TabIndex = 4
         '
         'btnCalculate
         '
-        Me.btnCalculate.Location = New System.Drawing.Point(619, 198)
+        Me.btnCalculate.Location = New System.Drawing.Point(585, 215)
         Me.btnCalculate.Name = "btnCalculate"
         Me.btnCalculate.Size = New System.Drawing.Size(75, 23)
         Me.btnCalculate.TabIndex = 5
@@ -110,7 +118,7 @@ Partial Class Form1
         'optRectangle
         '
         Me.optRectangle.AutoSize = True
-        Me.optRectangle.Location = New System.Drawing.Point(6, 22)
+        Me.optRectangle.Location = New System.Drawing.Point(13, 22)
         Me.optRectangle.Name = "optRectangle"
         Me.optRectangle.Size = New System.Drawing.Size(77, 19)
         Me.optRectangle.TabIndex = 8
@@ -121,7 +129,7 @@ Partial Class Form1
         'optCircle
         '
         Me.optCircle.AutoSize = True
-        Me.optCircle.Location = New System.Drawing.Point(6, 47)
+        Me.optCircle.Location = New System.Drawing.Point(13, 47)
         Me.optCircle.Name = "optCircle"
         Me.optCircle.Size = New System.Drawing.Size(55, 19)
         Me.optCircle.TabIndex = 9
@@ -132,7 +140,7 @@ Partial Class Form1
         'optTrapezium
         '
         Me.optTrapezium.AutoSize = True
-        Me.optTrapezium.Location = New System.Drawing.Point(6, 72)
+        Me.optTrapezium.Location = New System.Drawing.Point(13, 72)
         Me.optTrapezium.Name = "optTrapezium"
         Me.optTrapezium.Size = New System.Drawing.Size(79, 19)
         Me.optTrapezium.TabIndex = 10
@@ -158,7 +166,7 @@ Partial Class Form1
         Me.grpRectangle.Controls.Add(Me.lblLength)
         Me.grpRectangle.Controls.Add(Me.txtRectWidth)
         Me.grpRectangle.Controls.Add(Me.lblWidth)
-        Me.grpRectangle.Location = New System.Drawing.Point(60, 198)
+        Me.grpRectangle.Location = New System.Drawing.Point(60, 254)
         Me.grpRectangle.Name = "grpRectangle"
         Me.grpRectangle.Size = New System.Drawing.Size(200, 100)
         Me.grpRectangle.TabIndex = 12
@@ -169,18 +177,82 @@ Partial Class Form1
         '
         Me.grpCircle.Controls.Add(Me.lblCirRadius)
         Me.grpCircle.Controls.Add(Me.txtCirRadius)
-        Me.grpCircle.Location = New System.Drawing.Point(60, 317)
+        Me.grpCircle.Location = New System.Drawing.Point(60, 360)
         Me.grpCircle.Name = "grpCircle"
         Me.grpCircle.Size = New System.Drawing.Size(200, 100)
         Me.grpCircle.TabIndex = 11
         Me.grpCircle.TabStop = False
         Me.grpCircle.Text = "Enter Circle Radius"
         '
+        'grpTrapezium
+        '
+        Me.grpTrapezium.Controls.Add(Me.lblTpzSide2)
+        Me.grpTrapezium.Controls.Add(Me.lblTpzSide1)
+        Me.grpTrapezium.Controls.Add(Me.lblTpzHeight)
+        Me.grpTrapezium.Controls.Add(Me.txtTpzSide2)
+        Me.grpTrapezium.Controls.Add(Me.txtTpzSide1)
+        Me.grpTrapezium.Controls.Add(Me.txtTpzHeight)
+        Me.grpTrapezium.Location = New System.Drawing.Point(60, 135)
+        Me.grpTrapezium.Name = "grpTrapezium"
+        Me.grpTrapezium.Size = New System.Drawing.Size(200, 113)
+        Me.grpTrapezium.TabIndex = 11
+        Me.grpTrapezium.TabStop = False
+        Me.grpTrapezium.Text = "Enter Height, and parallel sides"
+        '
+        'lblTpzSide2
+        '
+        Me.lblTpzSide2.AutoSize = True
+        Me.lblTpzSide2.Location = New System.Drawing.Point(14, 83)
+        Me.lblTpzSide2.Name = "lblTpzSide2"
+        Me.lblTpzSide2.Size = New System.Drawing.Size(38, 15)
+        Me.lblTpzSide2.TabIndex = 5
+        Me.lblTpzSide2.Text = "Side 2"
+        '
+        'lblTpzSide1
+        '
+        Me.lblTpzSide1.AutoSize = True
+        Me.lblTpzSide1.Location = New System.Drawing.Point(14, 54)
+        Me.lblTpzSide1.Name = "lblTpzSide1"
+        Me.lblTpzSide1.Size = New System.Drawing.Size(38, 15)
+        Me.lblTpzSide1.TabIndex = 4
+        Me.lblTpzSide1.Text = "Side 1"
+        '
+        'lblTpzHeight
+        '
+        Me.lblTpzHeight.AutoSize = True
+        Me.lblTpzHeight.Location = New System.Drawing.Point(14, 25)
+        Me.lblTpzHeight.Name = "lblTpzHeight"
+        Me.lblTpzHeight.Size = New System.Drawing.Size(43, 15)
+        Me.lblTpzHeight.TabIndex = 3
+        Me.lblTpzHeight.Text = "Height"
+        '
+        'txtTpzSide2
+        '
+        Me.txtTpzSide2.Location = New System.Drawing.Point(69, 80)
+        Me.txtTpzSide2.Name = "txtTpzSide2"
+        Me.txtTpzSide2.Size = New System.Drawing.Size(100, 23)
+        Me.txtTpzSide2.TabIndex = 2
+        '
+        'txtTpzSide1
+        '
+        Me.txtTpzSide1.Location = New System.Drawing.Point(69, 51)
+        Me.txtTpzSide1.Name = "txtTpzSide1"
+        Me.txtTpzSide1.Size = New System.Drawing.Size(100, 23)
+        Me.txtTpzSide1.TabIndex = 1
+        '
+        'txtTpzHeight
+        '
+        Me.txtTpzHeight.Location = New System.Drawing.Point(69, 22)
+        Me.txtTpzHeight.Name = "txtTpzHeight"
+        Me.txtTpzHeight.Size = New System.Drawing.Size(100, 23)
+        Me.txtTpzHeight.TabIndex = 0
+        '
         'Form1
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(7.0!, 15.0!)
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
-        Me.ClientSize = New System.Drawing.Size(800, 450)
+        Me.ClientSize = New System.Drawing.Size(716, 485)
+        Me.Controls.Add(Me.grpTrapezium)
         Me.Controls.Add(Me.grpRectangle)
         Me.Controls.Add(Me.btnCalculate)
         Me.Controls.Add(Me.lstOutput)
@@ -194,6 +266,8 @@ Partial Class Form1
         Me.grpRectangle.PerformLayout()
         Me.grpCircle.ResumeLayout(False)
         Me.grpCircle.PerformLayout()
+        Me.grpTrapezium.ResumeLayout(False)
+        Me.grpTrapezium.PerformLayout()
         Me.ResumeLayout(False)
 
     End Sub
@@ -212,4 +286,11 @@ Partial Class Form1
     Friend WithEvents grpShapeSelection As GroupBox
     Friend WithEvents grpRectangle As GroupBox
     Friend WithEvents grpCircle As GroupBox
+    Friend WithEvents grpTrapezium As GroupBox
+    Friend WithEvents lblTpzSide2 As Label
+    Friend WithEvents lblTpzSide1 As Label
+    Friend WithEvents lblTpzHeight As Label
+    Friend WithEvents txtTpzSide2 As TextBox
+    Friend WithEvents txtTpzSide1 As TextBox
+    Friend WithEvents txtTpzHeight As TextBox
 End Class
